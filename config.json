@@ -1,0 +1,9 @@
+{
+    "database":{
+        "host":"localhost",
+        "database":"shortn",
+        "user":"admin",
+        "password":"admin",
+        "tablename":"links"
+    }
+}
