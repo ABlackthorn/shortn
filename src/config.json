@@ -1,6 +1,6 @@
 {
     "database":{
-        "host":"localhost",
+        "host":"db",
         "database":"shortn",
         "user":"admin",
         "password":"admin",

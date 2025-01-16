@@ -1,0 +1,27 @@
+services:
+  db:
+    image: postgres
+    restart: unless-stopped
+    container_name: db
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=shortn
+    ports:
+      - 5432:5432
+    volumes:
+      - ./db:/var/lib/postgresql/data
+
+  api:
+    platform: linux/amd64
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+
+volumes:
+  db:
+    driver: local
